@@ -1,17 +1,93 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>My Cool Web Page</title>
+        <title>Dinner Survey</title>
         <link rel = "stylesheet"
         type = "text/css"
         href = "/static/css/webpage.css">
     </head>
     <body class="main">
-        <h1>Hello Web Page</h1>
-        <div>
-            <li>menu one</li>
-            <li>menu two</li>
-        </div>
+        <h1 class="heading">Dinner Choices</h1>
 
+
+        <ul class="flex-container longhand">
+                <li class="flex-item">
+                    <input id="radio1" type="radio" name="radio" value="Lasagna">
+                    <label for="radio1"> 
+                                Lasagna 
+                                                  
+                    </label>
+                </li>
+                <li class="flex-item">
+                    <input id="radio2" type="radio" name="radio" value="Sushi">
+                    <label for="radio2">
+                        Sushi
+                    </label>
+                </li>
+                <li class="flex-item">
+                    <input id="radio3" type="radio" name="radio" value="Cheeseburger">
+                        <label for="radio3">Cheeseburger</label>
+                </li>
+                <li class="flex-item">
+                    <input id="radio4" type="radio" name="radio" value="Hardtack">
+                        <label for="radio4">Hardtack</label>
+                </li>
+                <li class="flex-item">
+                    <input id="radio5" type="radio" name="radio" value="Salad">
+                        <label for="radio5">Salad</label>
+                </li>
+              </ul>
+
+              <h2 class="thankyou out">Thank you for making your selection.</h2>
+
+              <p class="quotation out" id="quotation" >
+                  <span class="choice">placeholder</span> <q>is an amazing choice.</q>
+              </p>
+              <script>
+
+
+                function disableRadios (radios) {
+                    for (var i = 0, r=radios, l=r.length; i < l;  i++){
+                        r[i].disabled = true;
+                    }
+                }
+
+
+                  console.log("script")
+                  var radioButtons = document.querySelectorAll("input[type=radio]")
+                  var thankyouText = document.querySelector('h2.thankyou')
+                  var quotationText = document.getElementById("quotation")
+                  console.log(
+                      "quotation text"
+                  )
+                  console.log(quotationText)
+
+                  radioButtons.forEach((btn) => {
+                      btn.addEventListener('click', (e) => {
+                          console.log("clicked")
+                          console.log("e.target")
+                          console.log(e.target)
+                          console.log(e.target.value)
+                          document.querySelector('.choice').innerHTML = e.target.value
+                          
+                          
+                          var listener = thankyouText.addEventListener('animationend', (el) => {
+                                console.log('Animation ended');
+                                console.log(el)
+                                thankyouText.classList.replace('fade_in', 'out')
+                                console.log("adding phrase element")
+                                quotationText.classList.replace('out','in')
+
+                               
+                            }, {once: true})
+
+                            thankyouText.classList.replace('out', 'fade_in')
+                            console.log("done")
+                            console.log(thankyouText) 
+                            disableRadios(radioButtons)
+
+                      })
+                  })
+              </script>
     </body>
 </html>

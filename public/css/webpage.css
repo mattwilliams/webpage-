@@ -1,3 +1,182 @@
 .main {
-    background-color: green
+    background-color: #efefef;
+    background-image: linear-gradient(to right, rgba(19, 17, 17, 0), rgb(248, 240, 240));
+    font-family: Arial, Helvetica, sans-serif;
 }
+
+.heading {
+  text-align: center;
+  color: #888888;
+  font-size: 60px;
+  margin-bottom: 0;
+  margin-top: 6px;
+}
+
+.flex-container {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+  }
+
+  .longhand {
+    flex-flow: nowrap row;
+  }
+  .flex-item {
+    color: #C3D0D9;
+    width: 200px;
+    height: min-content;
+    font-size: 1.3em;
+    text-align: center;
+    padding: 1.2em;
+  }
+  label {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background-color: black;
+  }
+  input:checked + label {
+    color: #fff;
+    background-color: red;
+  }
+  input {
+    display: none;
+  }
+
+
+
+
+  .image { 
+    position: relative; 
+    width: 100%; /* for IE 6 */
+ }
+
+ .image img {
+     max-width: 200px;
+ }
+
+
+ 
+ .box h5 { 
+    bottom: 0px; 
+    left: 0; 
+    width: 100%; 
+    margin-bottom: 0;
+    font-size: 1.2em;
+    text-align: center;
+    font-weight: 500;
+ }
+
+ .selected {
+     background:red;
+     width: 200px;
+     height: 30px;
+ }
+ .label-text {
+     
+     width:100%;
+
+ }
+
+ /* .main label {
+    position: relative;
+ } */
+
+ .box {
+    display: flex;
+  }
+
+  .box > * {
+    flex: 1 1 0;
+  }
+  .container {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  }
+
+  h2 {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .quotation {
+    text-align: center;
+    font-size: 16px;
+    margin-top: -40px;
+
+  }
+
+  .fade_in {
+animation-name: move;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-play-state: running; 
+    animation: move 1s ease-in-out;
+  }
+
+  .fade_out {
+    animation-name: fade_down;
+    animation-duration: 3s;
+    animation-timing-function: ease;
+    animation-delay: 0.5s;
+    animation-iteration-count: 5;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+  }
+
+  .out {
+    opacity: 0;
+    position: relative;
+    height: 0px;
+    transition-property: opacity, height;
+    transition: opacity 1s, height 5s;
+  }
+  .in {
+    opacity: 1;
+    position: relative;
+    font-size: 50px;
+    transition-property: opacity, font-size;
+    transition: opacity 3s, font-size, 2s;
+  }
+
+
+
+
+  @keyframes fade_down { from { opacity:1 } to { opacity:0 }}
+  @keyframes fade_up { from { opacity:0 } to { opacity:1 }}
+
+
+  @keyframes move {
+
+  0% {
+    opacity: 0;
+  }
+
+  20%, 100% {
+    opacity: 1;
+  }
+}
+
+
+  .choice {
+    font-weight: bold;
+    color: green;
+  }
+
+  .thankyou {
+    height:10px;
+    color:green;
+
+  }
+
+  
