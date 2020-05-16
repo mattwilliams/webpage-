@@ -12,29 +12,29 @@
 
         <ul class="flex-container longhand">
                 <li class="flex-item">
-                    <input id="radio1" type="radio" name="radio" value="Lasagna">
+                    <input id="radio1" type="radio" name="radio" value="Spaghetti">
                     <label for="radio1"> 
-                                Lasagna 
+                                Spaghetti 
                                                   
                     </label>
                 </li>
                 <li class="flex-item">
-                    <input id="radio2" type="radio" name="radio" value="Sushi">
+                    <input id="radio2" type="radio" name="radio" value="Cheeseburger">
                     <label for="radio2">
-                        Sushi
+                        Cheeseburger
                     </label>
                 </li>
                 <li class="flex-item">
-                    <input id="radio3" type="radio" name="radio" value="Cheeseburger">
-                        <label for="radio3">Cheeseburger</label>
+                    <input id="radio3" type="radio" name="radio" value="Pork Cutlets">
+                        <label for="radio3">Pork Cutlets</label>
                 </li>
                 <li class="flex-item">
                     <input id="radio4" type="radio" name="radio" value="Hardtack">
                         <label for="radio4">Hardtack</label>
                 </li>
                 <li class="flex-item">
-                    <input id="radio5" type="radio" name="radio" value="Salad">
-                        <label for="radio5">Salad</label>
+                    <input id="radio5" type="radio" name="radio" value="Left-overs">
+                        <label for="radio5">Left-overs</label>
                 </li>
               </ul>
 
@@ -69,8 +69,13 @@
                           console.log(e.target)
                           console.log(e.target.value)
                           document.querySelector('.choice').innerHTML = e.target.value
-                          
-                          
+
+                          document.cookie='dinnersurvey=' + e.target.value + ';'
+                          var routeUrl = "http://localhost:3000/data/" + e.target.value
+                          fetch(routeUrl)
+                          .then(d => console.log(d))
+                          .catch(error => console.log(error))
+
                           var listener = thankyouText.addEventListener('animationend', (el) => {
                                 console.log('Animation ended');
                                 console.log(el)
