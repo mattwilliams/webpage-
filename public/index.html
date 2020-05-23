@@ -71,7 +71,7 @@
                           document.querySelector('.choice').innerHTML = e.target.value
 
                           document.cookie='dinnersurvey=' + e.target.value + ';'
-                          var routeUrl = "http://localhost:3000/data/" + e.target.value
+                          var routeUrl = "http://10.0.180.55:3000//data/" + e.target.value
                           fetch(routeUrl)
                           .then(d => console.log(d))
                           .catch(error => console.log(error))
