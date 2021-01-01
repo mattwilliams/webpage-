@@ -1,7 +1,8 @@
 module.exports = {
   apps : [{
     script: 'index.js',
-    watch: '.'
+    watch: '.',
+    interpreter: '/Users/matthew/.nvm/v15.5.0/bin/node'
   }],
 
   deploy : {
