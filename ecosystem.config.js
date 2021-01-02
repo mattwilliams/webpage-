@@ -13,7 +13,7 @@ module.exports = {
       repo : 'git@github.com:mattwilliams/webpage-.git',
       path : '/Users/matthew/webpage/',
       'pre-deploy-local': '',
-      'post-deploy' : 'which node',
+      'post-deploy' : 'npm install && pm2 reload ecosystem.config.js --env production',
       'pre-setup': ''
     }
   }
