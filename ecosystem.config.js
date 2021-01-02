@@ -13,7 +13,7 @@ module.exports = {
       repo : 'git@github.com:mattwilliams/webpage-.git',
       path : '/Users/matthew/webpage/',
       'pre-deploy-local': '',
-      'post-deploy' : 'ls -alg && whoami',
+      'post-deploy' : 'which node',
       'pre-setup': ''
     }
   }
